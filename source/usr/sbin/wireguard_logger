@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Copyright (C) 2022 Charles Atkinson
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+# Example output line from wg show wg0 dump 
+# F570BnOxyGz3NseiAqwnYjCHF/VDkklB1EHPkUFXvQw= (none) 10.10.50.10:52047 172.17.1.33/32 1657858704 163220 44252 off
+# |                                            |      |                 |              |          |      |     persistent-keepalive 
+# |                                            |      |                 |              |          |      transfer-tx
+# |                                            |      |                 |              |          transfer-rx
+# |                                            |      |                 |              latest-handshake
+# |                                            |      |                 allowed-ips
+# |                                            |      endpoint
+# |                                            preshared-key
+# public-key
+
+mmm_d_hhmmss=$(date '+%b %d %H:%M:%S')
+now=$(date +%s)
+
+while read -r public_key _ endpoint allowed_ips latest_handshake _
+do
+    ((($now-$latest_handshake)>180)) && continue
+    fqdn=$(grep -r "$public_key" /etc/wireguard/clients/ | sed -e 's|/etc/wireguard/clients/||' -e 's|/.*||') 
+    printf '%s %18s %24s %3ssec %s\n' "$mmm_d_hhmmss" "$allowed_ips" "$endpoint" "$((now-latest_handshake))" "$fqdn" \
+        >> /var/log/wireguard.log
+done < <(wg show wg0 dump 2>&1 | tail -n +2 | grep -v 'Unable to access interface: No such device')
+

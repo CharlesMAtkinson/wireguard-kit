@@ -1,0 +1,18 @@
+/var/log/wg.log {
+    daily
+    rotate 28
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 0640 root adm
+}
+/var/log/sync_wireguard_to_standby.log {
+    daily
+    rotate 28
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 0640 root adm
+}

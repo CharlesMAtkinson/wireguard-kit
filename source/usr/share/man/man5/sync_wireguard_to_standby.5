@@ -1,0 +1,83 @@
+.ig
+Copyright (C) 2022 Charles Atkinson
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the
+entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions, except that this permission notice may be included in
+translations approved by the Free Software Foundation instead of in
+the original English.
+..
+.\" No adjustment (ragged right)
+.na
+.TH sync_wireguard_to_standby 5 "19 Dec 2022" "Auroville" "Version 1v0.0"
+.SH NAME
+sync_wireguard_to_standby \- configuration for wireguard-kit's sync_wireguard_to_standby script
+.SH SYNOPSIS
+[
+.br
+\fBnftables_conf_fn=\fIfile_path\fR
+.br
+\fBnftables_service=\fIservice_name\fR
+.br
+]
+.br
+\fBwireguard_conf_dir=\fIdirectory_path\fR
+.br
+\fBwireguard_service=\fIservice_name\fR
+.br
+\fBwireguard_standby_ssh_host=\fIssh_host_name\fR
+.SH DESCRIPTION
+This man page describes the sync_wireguard_to_standby configuration file format
+.SH OPTIONS (file format)
+.
+Lines beginning with #, empty lines and lines containing only spaces and tabs are ignored.
+.br
+Line syntax is: \fIname\fB=\fIvalue\fR
+.TP
+\fBnftables_conf_fn=\fIfile_path\fR
+.RS
+.P
+\fIfile_path\fR is normally /etc/nftables.conf
+.RE
+.TP
+\fBnftables_service=\fIservice_name\fR
+.RS
+.P
+\fIservice_name\fR is normally nftables.service
+.RE
+.TP
+\fBwireguard_conf_dir=\fIdirectory_path\fR
+.RS
+.P
+\fIdirectory_path\fR is normally /etc/wireguard
+.RE
+.TP
+\fBwireguard_service=\fIservice_name\fR
+.RS
+.P
+\fIservice_name\fR is conventionally wg-quick@wg0.service
+.RE
+.TP
+\fBwireguard_standby_ssh_host=\fIssh_host_name\fR
+.RS
+.P
+\fIssh_host_name\fR is the host name of the stanza in /root/.ssh/config to be used to ssh connect to the standby server
+.RE
+.SH EXAMPLES
+/etc/wireguard/sync_wireguard_to_standby.conf
+.SH AUTHOR
+Charles Atkinson wireguard-kit@charlesmatkinson.org
+.SH SEE ALSO
+\fBsync_wireguard_to_standby\fR(8),
+.br
+The wireguard-kit user guide,
+installed in /usr/share/doc/wireguard-kit

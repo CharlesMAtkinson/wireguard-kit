@@ -1,0 +1,9 @@
+[Unit]
+Description=sync_wireguard_to_standby.service timer
+
+[Timer]
+OnCalendar=*-*-* 03:17
+Unit=sync_wireguard_to_standby.service
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,2 @@
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: wg-quick@.*\.service: Control process exited, code=exited, status=2/INVALIDARGUMENT$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: wg-quick@.*\.service: Failed with result 'exit-code'\.$

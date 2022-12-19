@@ -1,0 +1,122 @@
+.ig
+Copyright (C) 2022 Charles Atkinson
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the
+entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions, except that this permission notice may be included in
+translations approved by the Free Software Foundation instead of in
+the original English.
+..
+.\" No adjustment (ragged right)
+.na
+.TH wireguard_client_admin 8 "19 Dec 2022" "Auroville" "Version 1v0.0"
+.SH NAME
+wireguard_client_admin \- create a WireGuard client
+.SH SYNOPSIS
+\fR[\fB-c\~\fIconffile\fR]
+\fR[\fB-d\fR]
+\fB-f\~\fIhostname\fR
+\fR[\fB-h\fR]
+\fB-i\~\fIIP address\fR
+\fR[\fB-I\fR]
+\fR[\fB-l\fR]
+\fR[\fB-n\fR]
+\fR[\fB-q\fR]
+.SH CONFIGURATION
+\fBwireguard_client_admin\fR(5)
+.SH DESCRIPTION
+Purpose: create a Wireguard client
+.RS
+.IP \[bu] 2
+To be run on the wireguard server
+.IP \[bu] 2
+Create /etc/wireguard/clients/<client_fqdn>.client.conf.  To be used as the client's /etc/wireguard/wg0.conf
+.IP \[bu] 2
+Create /etc/wireguard/clients/<client_fqdn>.server.conf.  To be used in the server's /etc/wireguard/wg0.conf
+.IP \[bu] 2
+Update the server's /etc/wireguard/wg0.conf and effect the change
+.IP \[bu] 2
+If client is ssh accessible
+.RS
+.IP \[bu] 2
+Install Wireguard packages
+.IP \[bu]
+Install /etc/wireguard/wg0.conf
+.IP \[bu]
+Enable the Wireguard interfaces
+.IP \[bu]
+Test
+.RE
+.IP \[bu] 2
+Else inform user /etc/wireguard/<client_fqdn>/client.conf needs to be deployed
+.RE
+.SH OPTIONS
+.TP
+\fB-c\fR\~\fIconffile\fR
+Configuration file name.  Default /etc/wireguard/wireguard_client_admin.conf
+.TP
+\fB-d\fR
+Enable debug logging
+.TP
+\fB-f\~\fIhostname\fR
+Client FQDN
+.TP
+\fB-h\fR
+Print help and exit
+.TP
+\fB-i\~\fIIP address\fR
+IP address of client
+.RE
+.TP
+\fB-I\fR
+install on client only.  A re-try.  File /etc/wireguard/clients/<FQDN>.client.conf must exist from an earlier run
+.TP
+\fB-l\fR
+Log to /dev/tty (screen).  Default log to /var/log/wireguard_client_admin/wireguard_client_admin.<timestamp>.log
+.TP
+\fB-n\fR
+Do not install on client
+.TP
+\fB-q\fR
+Quiet.  When used with option -l, informational messages are not generated
+.SH EXIT STATUS
+\fB0\fR Success
+.br
+Otherwise the sum of
+.RS
+.IP \[bu] 2
+1 when there was a warning message
+.IP \[bu] 2
+2 when there was an error
+.IP \[bu] 2
+128 plus the signal number when a signal other than SIGCHLD was trapped
+.RE
+.SH ENVIRONMENT
+Environment variables are not used
+.SH FILES
+/etc/wireguard/clients/<FQDN>.client.conf
+.br
+/etc/wireguard/clients/<FQDN>.server.conf
+.br
+/etc/wireguard/wireguard_client_admin.conf
+.br
+/etc/wireguard/wg0.conf
+.br
+/var/log/wireguard_client_admin/wireguard_client_admin.<timestamp>.log
+.SH BUGS
+https://github.com/CharlesMAtkinson/wireguard-kit/issues
+.SH AUTHORS
+Charles Atkinson wireguard-kit@charlesmatkinson.org
+.SH SEE ALSO
+\fBwireguard_client_admin\fR(5)
+.br
+The wireguard-kit user guide, installed in /usr/share/doc/wireguard-kit

@@ -1,0 +1,83 @@
+.ig
+Copyright (C) 2022 Charles Atkinson
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the
+entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions, except that this permission notice may be included in
+translations approved by the Free Software Foundation instead of in
+the original English.
+..
+.\" No adjustment (ragged right)
+.na
+.TH sync_wireguard_to_standby 8 "19 Dec 2022" "Auroville" "Version 1v0.0"
+.SH NAME
+sync_wireguard_to_standby \- synchronise the WireGuard production server to the standby server
+.SH SYNOPSIS
+\fR[\fB-c\~\fIconffile\fR]
+\fR[\fB-d\fR]
+\fR[\fB-h\fR]
+\fR[\fB-l\fR]
+.SH CONFIGURATION
+\fBsync_wireguard_to_standby\fR(5)
+.SH DESCRIPTION
+Synchronises WireGuard and wireguard-kit configuration from production server to standby server
+.RS
+.IP \[bu] 2
+To be run on the WireGuard production server
+.IP \[bu] 2
+Synchronise the /etc/wireguard tree
+.IP \[bu] 2
+Restart wg-quick@wg0.service
+.IP \[bu] 2
+Synchronise /etc/nftables.conf
+.IP \[bu] 2
+Restart nftables.service
+.RE
+.SH OPTIONS
+.TP
+\fB-c\fR\~\fIconffile\fR
+Configuration file name.  Default /etc/wireguard/sync_wireguard_to_standby.conf
+.TP
+\fB-d\fR
+Enable debug logging
+.TP
+\fB-h\fR
+Print help and exit
+.TP
+\fB-l\fR
+Log to /dev/tty (screen).  Default log to file under /var/log/sync_wireguard_to_standby
+.SH EXIT STATUS
+\fB0\fR Success
+.br
+Otherwise the sum of
+.RS
+.IP \[bu] 2
+1 when there was a warning message
+.IP \[bu] 2
+2 when there was an error
+.IP \[bu] 2
+128 plus the signal number when a signal other than SIGCHLD was trapped
+.RE
+.SH ENVIRONMENT
+Environment variables are not used
+.SH FILES
+/etc/wireguard/sync_wireguard_to_standby.conf
+.br
+/var/log/sync_wireguard_to_standby/sync_wireguard_to_standby.<timestamp>.log
+.SH BUGS
+https://github.com/CharlesMAtkinson/wireguard-kit/issues
+.SH AUTHORS
+Charles Atkinson wireguard-kit@charlesmatkinson.org
+.SH SEE ALSO
+\fBwireguard_client_admin\fR(5)
+.br
+The wireguard-kit user guide, installed in /usr/share/doc/wireguard-kit

@@ -1,0 +1,9 @@
+[Unit]
+Description=Logs WireGuard clients active in the last three minutes to /var/log/wireguard.log
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/wireguard_logger
+
+[Install]
+WantedBy=multi-user.target

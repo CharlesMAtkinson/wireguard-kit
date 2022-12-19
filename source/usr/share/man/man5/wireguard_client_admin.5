@@ -1,0 +1,79 @@
+.ig
+Copyright (C) 2022 Charles Atkinson
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the
+entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions, except that this permission notice may be included in
+translations approved by the Free Software Foundation instead of in
+the original English.
+..
+.\" No adjustment (ragged right)
+.na
+.TH wireguard_client_admin 5 "19 Dec 2022" "Auroville" "Version 1v0.0"
+.SH NAME
+wireguard_client_admin \- configuration for wireguard-kit's wireguard_client_admin script
+.SH SYNOPSIS
+\fBendpoint=\fIserver_hostname>\fB:\fIport\fR
+.br
+\fBnetwork=\fInetwork_address\fR
+.br
+\fBserver_ip_addr=\fIip_address\fR
+.br
+\fBserver_conffile=\fIconffile_path\fR
+.br
+\fBserver_pubkey=\fIstring\fR
+.br
+.SH DESCRIPTION
+This man page describes the wireguard_client_admin configuration file format
+.SH OPTIONS (file format)
+Lines beginning with #, empty lines and lines containing only spaces and tabs are ignored.
+.br
+Line syntax is: \fIname\fB=\fIvalue\fR
+.TP
+\fBendpoint=\fIserver_hostname>\fB:\fIport\fR
+.RS
+.P
+The WireGuard server endpoint.  The port is conventionally 55820
+.RE
+.TP
+\fBnetwork=\fInetwork_address\fR
+.RS
+.P
+The WireGuard network address such as 172.17.0.0/16.  The port is conventionally 55820
+.RE
+.TP
+\fBserver_ip_addr=\fIip_address\fR
+.RS
+.P
+The WireGuard server's WireGuard address such as 172.17.0.1
+.RE
+.TP
+\fBserver_conffile=\fIconffile_path\fR
+.RS
+.P
+The WireGuard server's WireGuard configuration file.  Conventionally /etc/wireguard/wg0.conf
+.RE
+.TP
+\fBserver_pubkey=\fIstring\fR
+.RS
+.P
+The WireGuard server's WireGuard public key.  The content of /etc/wireguard/vpn-server-public.key
+.RE
+.SH EXAMPLES
+/etc/wireguard/wireguard_client_admin.conf
+.SH AUTHOR
+Charles Atkinson wireguard-kit@charlesmatkinson.org
+.SH SEE ALSO
+\fBwireguard_client_admin\fR(8),
+.br
+The wireguard-kit user guide,
+installed in /usr/share/doc/wireguard-kit

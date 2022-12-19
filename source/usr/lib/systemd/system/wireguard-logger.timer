@@ -1,0 +1,9 @@
+[Unit]
+Description=wireguard-logger.service timer
+
+[Timer]
+OnCalendar=*-*-* *:00/3:00
+Unit=wireguard-logger.service
+
+[Install]
+WantedBy=multi-user.target

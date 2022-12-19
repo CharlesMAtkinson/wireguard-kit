@@ -1,0 +1,8 @@
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wg-quick\[[[:digit:]]+\]: RTNETLINK answers: No such process
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wg-quick\[[[:digit:]]+\]: \[#\] ip link add .* type wireguard
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wg-quick\[[[:digit:]]+\]: \[#\] ip link delete dev 
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wg-quick\[[[:digit:]]+\]: \[#\] ip link set mtu [^ ]+ up dev 
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wg-quick\[[[:digit:]]+\]: \[#\] ip (-4 )?route add [^ ]+ dev 
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wg-quick\[[[:digit:]]+\]: \[#\] ip route del 
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wg-quick\[[[:digit:]]+\]: \[#\] ip -4 address add [^ ]+ dev 
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wg-quick\[[[:digit:]]+\]: \[#\] wg setconf .* /dev/fd/

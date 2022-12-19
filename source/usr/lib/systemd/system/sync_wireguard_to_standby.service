@@ -1,0 +1,9 @@
+[Unit]
+Description=Synchronise the WireGuard server configuration to a standby server
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/sync_wireguard_to_standby
+
+[Install]
+WantedBy=multi-user.target
