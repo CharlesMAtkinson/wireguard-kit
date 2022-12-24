@@ -1,4 +1,12 @@
 --------------------------------------------------------------------------------
+Version 1.0.1  24 Dec 2022
+
+* Added section "A new .deb version" to the "wireguard-kit publisher guide"
+* Added /usr/lib/systemd/system-preset/wireguard-kit.preset to set ""vendor preset: disabled"
+* Documentation fixes and clarifications
+
+* Initial version
+--------------------------------------------------------------------------------
 Version 1v0.0  19 Dec 2022
 
 * Initial version
