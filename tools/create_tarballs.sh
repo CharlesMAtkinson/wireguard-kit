@@ -279,7 +279,7 @@ function finalise {
 
     # Remove temporary directory
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if [[ $tmp_dir_created_flag ]]; then
+    if [[ ${tmp_dir_created_flag:$false} ]]; then
         if [[ ! $debugging_flag && ${tmp_dir:-} =~ $tmp_dir_regex ]]; then
             msg I "Removing temporary directory $tmp_dir (use option -d to keep it)"
             rm -fr "$tmp_dir"

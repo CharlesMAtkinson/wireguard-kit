@@ -24,7 +24,7 @@ source/usr/share/doc/wireguard-kit/NEWS	f	2022-12-24T09:56:19Z
 source/usr/share/doc/wireguard-kit/README.md	f	2022-12-20T04:01:14Z
 source/usr/share/doc/wireguard-kit/examples/cron/root_crontab	f	2022-11-21T03:40:19Z
 source/usr/share/doc/wireguard-kit/examples/nftables.conf	f	2022-12-18T04:16:54Z
-source/usr/share/doc/wireguard-kit/wireguard-kit publisher guide.odt	f	2022-12-24T09:59:00Z
+source/usr/share/doc/wireguard-kit/wireguard-kit publisher guide.odt	f	2022-12-24T11:35:50Z
 source/usr/share/doc/wireguard-kit/wireguard-kit user guide.odt	f	2022-12-24T06:55:04Z
 source/usr/share/man/man5/sync_wireguard_to_standby.5	f	2022-12-24T09:51:56Z
 source/usr/share/man/man5/wireguard_client_admin.5	f	2022-12-24T09:51:56Z
@@ -32,7 +32,7 @@ source/usr/share/man/man8/sync_wireguard_to_standby.8	f	2022-12-24T09:51:56Z
 source/usr/share/man/man8/wireguard_client_admin.8	f	2022-12-24T09:51:56Z
 source/usr/share/man/man8/wireguard_logger.8	f	2022-12-24T09:51:56Z
 tools/README.md	f	2022-11-28T11:03:46Z
-tools/create_tarballs.sh	f	2022-12-11T06:02:55Z
+tools/create_tarballs.sh	f	2022-12-24T10:56:37Z
 tools/git-store-meta/LICENSE	f	2022-02-28T06:13:48Z
 tools/git-store-meta/README-for-wireguard-kit.md	f	2022-11-28T11:06:26Z
 tools/git-store-meta/README.md	f	2022-02-28T06:13:48Z
