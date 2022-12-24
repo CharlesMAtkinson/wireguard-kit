@@ -20,11 +20,11 @@ source/usr/sbin/wireguard_logger	f	2022-12-24T06:25:46Z
 source/usr/share/doc/wireguard-kit/AUTHORS	f	2022-12-24T06:26:44Z
 source/usr/share/doc/wireguard-kit/BUGS	f	2022-11-28T11:16:06Z
 source/usr/share/doc/wireguard-kit/COPYING	f	2018-10-08T13:36:44Z
-source/usr/share/doc/wireguard-kit/NEWS	f	2022-12-24T09:50:38Z
+source/usr/share/doc/wireguard-kit/NEWS	f	2022-12-24T09:56:19Z
 source/usr/share/doc/wireguard-kit/README.md	f	2022-12-20T04:01:14Z
 source/usr/share/doc/wireguard-kit/examples/cron/root_crontab	f	2022-11-21T03:40:19Z
 source/usr/share/doc/wireguard-kit/examples/nftables.conf	f	2022-12-18T04:16:54Z
-source/usr/share/doc/wireguard-kit/wireguard-kit publisher guide.odt	f	2022-12-24T09:46:04Z
+source/usr/share/doc/wireguard-kit/wireguard-kit publisher guide.odt	f	2022-12-24T09:59:00Z
 source/usr/share/doc/wireguard-kit/wireguard-kit user guide.odt	f	2022-12-24T06:55:04Z
 source/usr/share/man/man5/sync_wireguard_to_standby.5	f	2022-12-24T09:51:56Z
 source/usr/share/man/man5/wireguard_client_admin.5	f	2022-12-24T09:51:56Z
