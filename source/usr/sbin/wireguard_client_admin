@@ -667,7 +667,7 @@ function install_client {
         msg="Unable to ssh connect using root@$fqdn"
         msg+=$'\n'"Manual installation required using the content of $client_conf_fn"
         msg+=$'\n'"and optionally repository/aurinoco/Wireguard/restart_wireguard_on_no_connection.tgz"
-        msg+=$'\n'"Procedure at https://redmine.auroville.org.in/projects/aurinoco/wiki/Wireguard_operations#Debian-Buster-and-later"
+        msg+=$'\n'"Procedure in 'wireguard-kit user guide.odt'"
         msg+=$'\n'"The -I option can be used to re-try automatic installation"
         msg I "$msg"
         return 0
@@ -852,7 +852,7 @@ if [[ ! $opt_r_flag ]]; then
         install_client
     else
         msg="Manual installation required using the content of $client_conf_fn"
-        msg+=$'\n'"Procedure at https://redmine.auroville.org.in/projects/aurinoco/wiki/Wireguard_operations"
+        msg+=$'\n'"Procedure in 'wireguard-kit user guide.odt'"
         msg I "$msg"
     fi
 else
